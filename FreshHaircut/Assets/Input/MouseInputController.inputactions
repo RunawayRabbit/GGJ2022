@@ -1,0 +1,86 @@
+{
+    "name": "MouseInputController",
+    "maps": [
+        {
+            "name": "PlayerOne",
+            "id": "f2ffb4e2-8579-49b9-aa69-ad629a091aee",
+            "actions": [
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "cd583d7c-93bb-4926-8424-b4991e214d5a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ConfirmMovementPoint",
+                    "type": "Button",
+                    "id": "86cd0f78-998e-405a-9990-0082fa0029e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "fc6041b6-af12-4872-8ebe-55aa08ddfeb8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e16c56f2-a127-44fa-ac46-2e880284160a",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d55c7424-9e4c-4b98-8e8d-5ee738e3d454",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Player",
+                    "action": "ConfirmMovementPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d4c9b03-1157-42cf-9ca5-0193e0ed900d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Player",
+            "bindingGroup": "Player",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

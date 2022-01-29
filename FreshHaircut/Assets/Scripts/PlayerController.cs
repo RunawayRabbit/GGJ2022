@@ -7,15 +7,18 @@ public class PlayerController : MonoBehaviour
 {
 	public float movementSpeed = 20f;
 
+	private bool isMoving;
 	private Vector2 _currentInputs;
 	private Vector3 _currentVelocity;
 	private MouseInputController InputController = null;
+	private PlayerSFXManager _sfxManager;
 
 	private Camera CurrentCamera = null;
 
 	private void Awake()
 	{
 		InputController = new MouseInputController();
+		_sfxManager = GetComponent<PlayerSFXManager>();
 		CurrentCamera = Camera.main;
 	}
 
@@ -61,6 +64,18 @@ public class PlayerController : MonoBehaviour
 		deltaMove += xAxis * _currentInputs.x * movementSpeed * Time.deltaTime;
 
 		transform.position += deltaMove;
+
+		if (!isMoving && deltaMove != Vector3.zero)
+		{
+			isMoving = true;
+			_sfxManager.Walk(isMoving);
+		}
+		
+		else if (isMoving && deltaMove == Vector3.zero)
+		{
+			isMoving = false;
+			_sfxManager.Walk(isMoving);
+		}
 	}
 
 	private void OnDrawGizmos()

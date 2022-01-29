@@ -299,8 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847173ec134e534baf7490f453e2856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationValue: 10
-  maxMovementSpeed: 20
+  accelerationValue: 20
+  decellerationValue: 15
+  maxMovementSpeed: 5
 --- !u!136 &1124063366
 CapsuleCollider:
   m_ObjectHideFlags: 0

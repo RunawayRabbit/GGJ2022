@@ -18,6 +18,7 @@ public class BraveryMeter : MonoBehaviour
     private NavMeshAgent _agent;
     private PlayerController _controller;
     private MusicManager _musicManager;
+    private PlayerSFXManager _sfxManager;
     
     private void Awake()
     {

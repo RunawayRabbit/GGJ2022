@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(PlayerSFXManager))]
 public class BraveryMeter : MonoBehaviour
 {
     public float maxBravery = 50f;

@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerSFXManager : MonoBehaviour
 {
     [SerializeField] private AudioSource _sfxSource;

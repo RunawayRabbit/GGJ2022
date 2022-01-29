@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 971101266}
   - component: {fileID: 971101265}
   - component: {fileID: 971101264}
-  - component: {fileID: 971101263}
   - component: {fileID: 971101262}
   - component: {fileID: 971101261}
   - component: {fileID: 971101260}
@@ -225,7 +224,7 @@ AudioSource:
   m_GameObject: {fileID: 971101258}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5041665677978751531, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -321,7 +320,7 @@ AudioSource:
   m_GameObject: {fileID: 971101258}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5041665677978751531, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -417,7 +416,7 @@ AudioSource:
   m_GameObject: {fileID: 971101258}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5041665677978751531, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}
   m_audioClip: {fileID: 8300000, guid: f45d901e82455d546b05640328cb4a48, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -504,18 +503,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &971101263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971101258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b70d86b444718d48a373b2a2dc49aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &971101264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,7 +640,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
 --- !u!1 &977803328
 GameObject:
@@ -746,7 +733,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 130, z: 90}
 --- !u!1 &1095090913
 GameObject:
@@ -825,10 +812,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBravery: 10
-  baseFrightValue: 1
+  baseFrightValue: 0
   frightValue: 0
   braveryQuota: 5
-  _camera: {fileID: 971101258}
+  _camera: {fileID: 0}
   _currentBravery: 0
 --- !u!114 &1095090917
 MonoBehaviour:

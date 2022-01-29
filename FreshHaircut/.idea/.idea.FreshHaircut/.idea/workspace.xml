@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9dd141b-1b24-4172-89ce-d9b4d6235c9f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FreshHaircut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FreshHaircut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Anton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Anton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/painting_nice.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/painting_nice.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/painting_notnice.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/painting_notnice.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/MusicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/MusicManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LookAtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LookAtPlayer.cs" afterDir="false" />
-    </list>
+    <list default="true" id="f9dd141b-1b24-4172-89ce-d9b4d6235c9f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,10 +22,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Renderer/BlitCircleSDFFeature.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LookAtPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../FGGP20/GP2/Assets/TestingDebug/RotateCircle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Renderer/RenderToTexture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LookAtPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Renderer/BlitCircleSDFFeature.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,10 +62,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10784">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10784" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -91,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643459182881</updated>
-      <workItem from="1643459203460" duration="14987000" />
+      <workItem from="1643459203460" duration="17593000" />
     </task>
     <servers />
   </component>
@@ -111,7 +101,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -120,10 +109,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Audio/PlayerSFXManager.cs</url>
-          <line>11</line>
-          <properties documentPath="C:\Users\Tove\GitFork\GGJ2022\FreshHaircut\Assets\Scripts\Audio\PlayerSFXManager.cs" initialLine="11" containingFunctionPresentation="method 'Exhale'" />
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs</url>
+          <line>68</line>
+          <properties documentPath="C:\Users\Tove\GitFork\GGJ2022\FreshHaircut\Assets\Scripts\PlayerController.cs" initialLine="69" containingFunctionPresentation="method 'DoTheMove'">
+            <startOffsets>
+              <option value="1677" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1678" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs</url>
+          <line>70</line>
+          <properties documentPath="C:\Users\Tove\GitFork\GGJ2022\FreshHaircut\Assets\Scripts\PlayerController.cs" initialLine="71" containingFunctionPresentation="method 'DoTheMove'">
+            <startOffsets>
+              <option value="1703" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1730" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

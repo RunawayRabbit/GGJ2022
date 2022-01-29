@@ -14,6 +14,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip _mainBass;
     [SerializeField] private AudioClip _exploringLoop;
     [SerializeField] private AudioClip _fearLoop;
+    [SerializeField] private AudioClip _mainLoop;
     
     [SerializeField] private AudioSource _mainSource;
     [SerializeField] private AudioSource _bassSource;
@@ -21,7 +22,11 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        _bassSource.clip = _mainBass;
+        _loopSource.clip = _mainLoop;
+        
         _bassSource.Play();
+        _loopSource.Play();
         _mainSource.Play();
     }
 
@@ -47,10 +52,12 @@ public class MusicManager : MonoBehaviour
     {
         StartCoroutine(FadeMusic(_loopSource, 0.5f, 0f));
         StartCoroutine(FadeMusic(_bassSource, 0.5f, 0f));
-        _loopSource.Stop();
+        _loopSource.time = _mainSource.time;
+        _loopSource.clip = _mainLoop;
         _bassSource.time = _mainSource.time;
         _bassSource.clip = _mainBass;
         StartCoroutine(FadeMusic(_bassSource, 0.5f, 1f));
+        StartCoroutine(FadeMusic(_loopSource, 0.5f, 1f));
     }
 
     private void PlayExploreMusic()

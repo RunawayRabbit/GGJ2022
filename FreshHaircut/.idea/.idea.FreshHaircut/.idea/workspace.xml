@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9dd141b-1b24-4172-89ce-d9b4d6235c9f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/LITERAL_FUCKING_DARKNESS.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/LITERAL_FUCKING_DARKNESS.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/LITERAL_FUCKING_LIGHTNESS.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/LITERAL_FUCKING_LIGHTNESS.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Wall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BraveryMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BraveryMeter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Renderer/BlitCircleSDFShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/BlitCircleSDFShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Renderer/LIT AREA.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Renderer/LIT AREA.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/ForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/ForwardRenderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

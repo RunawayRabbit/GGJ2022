@@ -9,10 +9,8 @@ public class BraveryMeter : MonoBehaviour
     public float baseFrightValue = 1.0f;
     public float frightValue = 0f;
     public float braveryQuota = 5f;
-
-    [SerializeField] private GameObject _camera;
-    
     public float _currentBravery = 0f;
+
     private bool _isRunningToBed = false;
     private bool _isFrightened = false;
     private Vector3 _bedPosition;
@@ -20,13 +18,15 @@ public class BraveryMeter : MonoBehaviour
     private PlayerController _controller;
     private MusicManager _musicManager;
     private PlayerSFXManager _sfxManager;
-    
+
+    public float GetCurrentBravery() => _currentBravery;
+
     private void Awake()
     {
-        _musicManager = _camera.GetComponent<MusicManager>();
-        _controller = GetComponent<PlayerController>();
-        _sfxManager = GetComponent<PlayerSFXManager>();
-        _agent = GetComponent<NavMeshAgent>();
+        _musicManager  = GameObject.FindObjectOfType<MusicManager>();
+        _controller    = GetComponent<PlayerController>();
+        _sfxManager    = GetComponent<PlayerSFXManager>();
+        _agent         = GetComponent<NavMeshAgent>();
         _agent.enabled = false;
 
         _isFrightened = false;
@@ -66,14 +66,14 @@ public class BraveryMeter : MonoBehaviour
             {
                 _sfxManager.Exhale();
             }
-            
+
             ResetBravery();
             ResetFrightValue();
             _agent.enabled = false;
             _controller.enabled = true;
             _isRunningToBed = false;
         }
-        
+
         else if (other.gameObject.CompareTag("DarkArea"))
         {
             ModifyFrightValue(1f);
@@ -86,7 +86,7 @@ public class BraveryMeter : MonoBehaviour
         {
             ResetFrightValue();
         }
-        
+
         else if (other.gameObject.CompareTag("Bed"))
         {
             ResetBravery();
@@ -97,7 +97,7 @@ public class BraveryMeter : MonoBehaviour
         }
     }
 
-    public void ModifyFrightValue(float newValue)
+    private void ModifyFrightValue(float newValue)
     {
         frightValue = newValue;
     }

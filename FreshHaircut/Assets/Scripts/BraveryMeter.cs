@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class BraveryMeter : MonoBehaviour
 {
     public float maxBravery = 50f;
+    public float baseFrightValue = 1.0f;
     public float frightValue = 0f;
     public float braveryQuota = 5f;
 
@@ -41,7 +42,6 @@ public class BraveryMeter : MonoBehaviour
 
         if (!_isFrightened && _currentBravery < braveryQuota)
         {
-            Debug.Log("hello i am in here");
             _isFrightened = true;
             _musicManager.PlayStem(musicStates.frightened);
         }
@@ -68,7 +68,7 @@ public class BraveryMeter : MonoBehaviour
         
         else if (other.gameObject.CompareTag("DarkArea"))
         {
-            ModifyDecreaseValue(1f);
+            ModifyFrightValue(1f);
         }
     }
 
@@ -89,7 +89,7 @@ public class BraveryMeter : MonoBehaviour
         }
     }
 
-    public void ModifyDecreaseValue(float newValue)
+    public void ModifyFrightValue(float newValue)
     {
         frightValue = newValue;
     }

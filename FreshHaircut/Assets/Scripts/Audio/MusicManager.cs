@@ -15,7 +15,7 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioClip _exploringLoop;
     [SerializeField] private AudioClip _fearLoop;
     [SerializeField] private AudioClip _mainLoop;
-    
+
     [SerializeField] private AudioSource _mainSource;
     [SerializeField] private AudioSource _bassSource;
     [SerializeField] private AudioSource _loopSource;
@@ -24,10 +24,10 @@ public class MusicManager : MonoBehaviour
     {
         _bassSource.clip = _mainBass;
         _loopSource.clip = _mainLoop;
-        
-        _bassSource.Play();
-        _loopSource.Play();
-        _mainSource.Play();
+
+        //_bassSource.Play();
+        //_loopSource.Play();
+        //_mainSource.Play();
     }
 
     public void PlayStem(musicStates state)
@@ -36,12 +36,12 @@ public class MusicManager : MonoBehaviour
         {
             PlayExploreMusic();
         }
-        
+
         else if (state == musicStates.frightened)
         {
             PlayFearMusic();
         }
-        
+
         else if (state == musicStates.main)
         {
             PlayMainMusic();

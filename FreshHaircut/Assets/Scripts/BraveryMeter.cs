@@ -53,7 +53,6 @@ public class BraveryMeter : MonoBehaviour
         
         else if (other.gameObject.CompareTag("DarkArea"))
         {
-            Debug.Log("uh oh it do be dark in here ");
             ModifyDecreaseValue(1f);
         }
     }

@@ -2911,25 +2911,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cfd95367ca9f8549aae2c1fe5ba5cb6, type: 3}
---- !u!1 &1239262462 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3329307603159400653, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-  m_PrefabInstance: {fileID: 1459401454}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1239262472
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239262462}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.66
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1001 &1241805575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3458,14 +3439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2259319982384297925, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: _camera
-      value: 
-      objectReference: {fileID: 6732171503927491899, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
-    - target: {fileID: 2259319982384297925, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: maxBravery
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3329307603159400652, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3513,30 +3486,6 @@ PrefabInstance:
     - target: {fileID: 3329307603159400653, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
       propertyPath: m_Name
       value: Anton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: m_Speed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: m_BaseOffset
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634498563768049196, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8634498563768049196, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 9047090236263543911, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
-      propertyPath: movementSpeed
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974a329e5ee2880449f7d118ba363963, type: 3}

@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 2259319982384297925}
   - component: {fileID: 9205932984612596919}
   - component: {fileID: 6782469771976764167}
+  - component: {fileID: 1239262472}
   m_Layer: 0
   m_Name: Anton
   m_TagString: Untagged
@@ -199,7 +200,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &9047090236263543911
 MonoBehaviour:
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9847173ec134e534baf7490f453e2856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 20
+  movementSpeed: 7
 --- !u!195 &4195388996436268581
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -224,16 +225,16 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 12
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &5731172059215370997
@@ -263,11 +264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db61c5ee8c4324a92965dcc11d0ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBravery: 10
+  maxBravery: 2
   baseFrightValue: 0
   frightValue: 0
   braveryQuota: 5
-  _camera: {fileID: 1941774471560523690}
+  _camera: {fileID: 7778615969536155887}
   _currentBravery: 0
 --- !u!82 &9205932984612596919
 AudioSource:
@@ -461,6 +462,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &1239262472
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329307603159400653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.66
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1001 &5161102944259773073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,13 +533,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
---- !u!1 &1941774471560523690 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6732171503927491899, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
-  m_PrefabInstance: {fileID: 5161102944259773073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6698240802824896680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1975678689831309881, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
+  m_PrefabInstance: {fileID: 5161102944259773073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7778615969536155887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3201172899271651966, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
   m_PrefabInstance: {fileID: 5161102944259773073}
   m_PrefabAsset: {fileID: 0}

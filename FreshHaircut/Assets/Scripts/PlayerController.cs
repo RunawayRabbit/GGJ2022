@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-	public float maxMovementSpeed = 20f;
+	public float movementSpeed = 20f;
 
 	private Vector2 _currentInputs;
 	private Vector3 _currentVelocity;
@@ -51,8 +51,8 @@ public class PlayerController : MonoBehaviour
 		Vector3 xAxis = Vector3.Cross( Vector3.up, yAxis );
 
 		Vector3 deltaMove = Vector3.zero;
-		deltaMove += yAxis * _currentInputs.y * maxMovementSpeed * Time.deltaTime;
-		deltaMove += xAxis * _currentInputs.x * maxMovementSpeed * Time.deltaTime;
+		deltaMove += yAxis * _currentInputs.y * movementSpeed * Time.deltaTime;
+		deltaMove += xAxis * _currentInputs.x * movementSpeed * Time.deltaTime;
 
 		transform.position += deltaMove;
 	}

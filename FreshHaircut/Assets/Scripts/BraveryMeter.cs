@@ -32,6 +32,7 @@ public class BraveryMeter : MonoBehaviour
     private void Start()
     {
         ResetBravery();
+        ResetFrightValue();
     }
 
     private void Update()
@@ -59,7 +60,7 @@ public class BraveryMeter : MonoBehaviour
         if (other.gameObject.CompareTag("Bed"))
         {
             ResetBravery();
-            ResetDecreaseValue();
+            ResetFrightValue();
             _agent.enabled = false;
             _controller.enabled = true;
             _isRunningToBed = false;
@@ -75,7 +76,16 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DarkArea"))
         {
-            ResetDecreaseValue();
+            ResetFrightValue();
+        }
+        
+        else if (other.gameObject.CompareTag("Bed"))
+        {
+            ResetBravery();
+            ResetFrightValue();
+            _agent.enabled = false;
+            _controller.enabled = true;
+            _isRunningToBed = false;
         }
     }
 
@@ -84,9 +94,9 @@ public class BraveryMeter : MonoBehaviour
         frightValue = newValue;
     }
 
-    private void ResetDecreaseValue()
+    private void ResetFrightValue()
     {
-        frightValue = 0f;
+        frightValue = baseFrightValue;
     }
 
     private void ResetBravery()

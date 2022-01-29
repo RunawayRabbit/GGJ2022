@@ -24,6 +24,7 @@ public class BraveryMeter : MonoBehaviour
     {
         _musicManager = _camera.GetComponent<MusicManager>();
         _controller = GetComponent<PlayerController>();
+        _sfxManager = GetComponent<PlayerSFXManager>();
         _agent = GetComponent<NavMeshAgent>();
         _agent.enabled = false;
 
@@ -60,6 +61,7 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bed"))
         {
+            _sfxManager.Exhale();
             ResetBravery();
             ResetFrightValue();
             _agent.enabled = false;

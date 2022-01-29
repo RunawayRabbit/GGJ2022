@@ -8,6 +8,7 @@ public class PlayerSFXManager : MonoBehaviour
 
     public void Exhale()
     {
-        _scSfxSource.PlayOneShot(_exhale);
+        _scSfxSource.clip = _exhale;
+        _scSfxSource.Play();
     }
 }

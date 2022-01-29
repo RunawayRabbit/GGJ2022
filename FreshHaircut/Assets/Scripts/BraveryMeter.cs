@@ -9,10 +9,8 @@ public class BraveryMeter : MonoBehaviour
     public float baseFrightValue = 1.0f;
     public float frightValue = 0f;
     public float braveryQuota = 5f;
-
-    [SerializeField] private GameObject _camera;
-
     public float _currentBravery = 0f;
+
     private bool _isRunningToBed = false;
     private bool _isFrightened = false;
     private Vector3 _bedPosition;
@@ -20,6 +18,8 @@ public class BraveryMeter : MonoBehaviour
     private PlayerController _controller;
     private MusicManager _musicManager;
     private PlayerSFXManager _sfxManager;
+
+    public float GetCurrentBravery() => _currentBravery;
 
     private void Awake()
     {
@@ -66,7 +66,7 @@ public class BraveryMeter : MonoBehaviour
             {
                 _sfxManager.Exhale();
             }
-            
+
             ResetBravery();
             ResetFrightValue();
             _agent.enabled = false;
@@ -97,7 +97,7 @@ public class BraveryMeter : MonoBehaviour
         }
     }
 
-    public void ModifyFrightValue(float newValue)
+    private void ModifyFrightValue(float newValue)
     {
         frightValue = newValue;
     }

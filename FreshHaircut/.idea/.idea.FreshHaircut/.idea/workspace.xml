@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9dd141b-1b24-4172-89ce-d9b4d6235c9f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FreshHaircut/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FreshHaircut/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/painting.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/painting.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EuanTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EuanTestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/MusicManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/MusicManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BraveryMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BraveryMeter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LookAtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LookAtPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Renderer/LITERAL_FUCKING_LIGHTNESS.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/LITERAL_FUCKING_LIGHTNESS.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Renderer/SDF_Test.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Renderer/SDF_Test.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures + Sprites/Materials/Pottet plant.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures + Sprites/Materials/Pottet plant.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,17 +108,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Audio/PlayerSFXManager.cs</url>
-          <line>11</line>
-          <properties documentPath="C:\Users\Tove\GitFork\GGJ2022\FreshHaircut\Assets\Scripts\Audio\PlayerSFXManager.cs" initialLine="11" containingFunctionPresentation="method 'Exhale'" />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

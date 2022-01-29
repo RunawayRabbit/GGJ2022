@@ -28,16 +28,22 @@ public class PlayerController : MonoBehaviour
 	{
 		InputController.PlayerOne.Move.performed += OnSetMovementInput;
 		InputController.PlayerOne.Move.canceled += OnSetMovementInput;
-		
+
 		InputController.Enable();
+
+		_currentVelocity = Vector3.zero;
+		_currentInputs   = Vector2.zero;
 	}
 
 	private void OnDisable()
 	{
 		InputController.PlayerOne.Move.performed -= OnSetMovementInput;
 		InputController.PlayerOne.Move.canceled -= OnSetMovementInput;
-		
+
 		InputController.Disable();
+
+		_currentVelocity = Vector3.zero;
+		_currentInputs   = Vector2.zero;
 	}
 
 	private void OnSetMovementInput(InputAction.CallbackContext obj)

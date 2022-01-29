@@ -11,7 +11,7 @@ public class BraveryMeter : MonoBehaviour
     public float braveryQuota = 5f;
 
     [SerializeField] private GameObject _camera;
-    
+
     public float _currentBravery = 0f;
     private bool _isRunningToBed = false;
     private bool _isFrightened = false;
@@ -20,13 +20,13 @@ public class BraveryMeter : MonoBehaviour
     private PlayerController _controller;
     private MusicManager _musicManager;
     private PlayerSFXManager _sfxManager;
-    
+
     private void Awake()
     {
-        _musicManager = _camera.GetComponent<MusicManager>();
-        _controller = GetComponent<PlayerController>();
-        _sfxManager = GetComponent<PlayerSFXManager>();
-        _agent = GetComponent<NavMeshAgent>();
+        _musicManager  = GameObject.FindObjectOfType<MusicManager>();
+        _controller    = GetComponent<PlayerController>();
+        _sfxManager    = GetComponent<PlayerSFXManager>();
+        _agent         = GetComponent<NavMeshAgent>();
         _agent.enabled = false;
 
         _isFrightened = false;
@@ -69,7 +69,7 @@ public class BraveryMeter : MonoBehaviour
             _controller.enabled = true;
             _isRunningToBed = false;
         }
-        
+
         else if (other.gameObject.CompareTag("DarkArea"))
         {
             ModifyFrightValue(1f);
@@ -82,7 +82,7 @@ public class BraveryMeter : MonoBehaviour
         {
             ResetFrightValue();
         }
-        
+
         else if (other.gameObject.CompareTag("Bed"))
         {
             ResetBravery();

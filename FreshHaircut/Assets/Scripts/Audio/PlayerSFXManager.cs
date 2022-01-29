@@ -2,15 +2,12 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(AudioSource))]
 public class PlayerSFXManager : MonoBehaviour
 {
     [SerializeField] private AudioSource _sfxSource;
     [SerializeField] private AudioSource _scSfxSource;
     [SerializeField] private AudioClip _exhale;
     [SerializeField] private AudioClip _footstep;
-
-    private Coroutine _lastRoutine = null;
 
     public void Exhale()
     {
@@ -23,11 +20,11 @@ public class PlayerSFXManager : MonoBehaviour
         if (isWalking == true)
         {
             _sfxSource.clip = _footstep;
-            _lastRoutine = StartCoroutine(Walking());
+            StartCoroutine(Walking());
         }
         else
         {
-            StopCoroutine(_lastRoutine);
+            StopAllCoroutines();
         }
     }
 

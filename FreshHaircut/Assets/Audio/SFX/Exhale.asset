@@ -19,4 +19,5 @@ MonoBehaviour:
   spacialBlend: 1
   pitchShift: 0
   randomVolume: 0
-  randomPitch: 0
+  randomPitch: 0.62
+  mixerGroup: {fileID: -8195690210267432824, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}

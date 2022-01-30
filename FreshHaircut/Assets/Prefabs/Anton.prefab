@@ -370,6 +370,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3329307603159400652}
     m_Modifications:
+    - target: {fileID: 134986722341742347, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 134986722341742347, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a8b8c25b3685a6409cb7f629ca95789, type: 3}
     - target: {fileID: 1975678689831309881, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -414,6 +422,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5049295498735773176, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049295498735773176, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b34e3dcc4faae64aad3020a83e0cfb9, type: 3}
     - target: {fileID: 6732171503927491899, guid: 5d387ddafa6a9af48869a1787ef58efb, type: 3}
       propertyPath: m_Name
       value: Cameras

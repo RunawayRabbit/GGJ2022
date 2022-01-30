@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 [CreateAssetMenu( fileName = "NewAudioData", menuName = "Data Definitions/Audio Data", order = 1 )]
@@ -14,6 +15,7 @@ public class AudioData : ScriptableObject
 	[Range( -20.0f, 0.0f )] public float randomVolume = 0f;
 	[Range( 0.0f, 12.0f )] public float randomPitch = 0f;
 
+	public AudioMixerGroup mixerGroup;
 
 	public float PlayOn( AudioSource source, float volume )
 	{
@@ -37,9 +39,11 @@ public class AudioData : ScriptableObject
 
 		source.spatialBlend = spacialBlend;
 
+		source.outputAudioMixerGroup = mixerGroup;
+
 		source.Play();
 
-		return clip.length;
+		return clip.length * source.pitch;
 	}
 
 	private AudioClip GetRandomClip()

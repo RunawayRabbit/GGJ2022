@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class SFXManager : MonoBehaviour
 {
 	private static SFXManager _instance = null;
-
-	[SerializeField] private AudioMixerGroup _sfxGroup;
 	private readonly List<AudioSource> _sourcePool = new List<AudioSource>();
 
 	private void Awake()
@@ -75,7 +72,6 @@ public class SFXManager : MonoBehaviour
 		//var GO = new GameObject( "SFX" );
 		GO.transform.parent = _instance.transform;
 		var source = GO.AddComponent<AudioSource>();
-		source.outputAudioMixerGroup = _instance._sfxGroup;
 
 		return source;
 	}

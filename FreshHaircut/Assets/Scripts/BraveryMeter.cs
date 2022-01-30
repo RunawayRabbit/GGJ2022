@@ -12,6 +12,7 @@ public class BraveryMeter : MonoBehaviour
     public float braveryQuota = 5f;
     public float _currentBravery = 0f;
 
+    private int addValue;
     private bool _isRunningToBed = false;
     private bool _isFrightened = false;
     private Vector3 _bedPosition;
@@ -94,7 +95,8 @@ public class BraveryMeter : MonoBehaviour
 
         else if (other.gameObject.CompareTag("DarkArea"))
         {
-            ModifyFrightValue(1f);
+            addValue = other.GetComponent<DarkArea>().FrightAddValue;
+            ModifyFrightValue(addValue);
         }
         else if (other.gameObject.CompareTag("LightArea"))
         {
@@ -106,7 +108,7 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DarkArea"))
         {
-            ResetFrightValue();
+            ModifyFrightValue(-addValue);
         }
 
         else if (other.gameObject.CompareTag("Bed"))
@@ -121,7 +123,7 @@ public class BraveryMeter : MonoBehaviour
 
     private void ModifyFrightValue(float newValue)
     {
-        frightValue = newValue;
+        frightValue += newValue;
     }
 
     private void ResetFrightValue()

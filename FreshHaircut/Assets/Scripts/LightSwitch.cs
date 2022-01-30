@@ -21,6 +21,17 @@ public class LightSwitch : MonoBehaviour
     [Header("Lightswitch audio:")] 
     [SerializeField] private AudioData _lightSwitchSound;
 
+    [Header("Light intensity value:")] 
+    [SerializeField] private float _intensity;
+    
+    [SerializeField] private GameObject _directionalLight;
+    private Light _lightComponent;
+
+    private void Awake()
+    {
+        _lightComponent = _directionalLight.GetComponent<Light>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -28,6 +39,7 @@ public class LightSwitch : MonoBehaviour
             SFXManager.PlaySoundAt(_lightSwitchSound, transform.position);
             _objectOfAbsoluteFuckingLightness.SetActive(true);
             _victoryCanvas.SetActive(true);
+            _lightComponent.intensity = _intensity;
         }
     }
 }

@@ -113,6 +113,8 @@ MonoBehaviour:
   _objectOfAbsoluteFuckingLightness: {fileID: 0}
   _victoryCanvas: {fileID: 8556134992640733474}
   _lightSwitchSound: {fileID: 11400000, guid: 47c245f368dd6194caa698823a3f500c, type: 2}
+  _intensity: 0.4
+  _directionalLight: {fileID: 0}
 --- !u!65 &4885002618103535537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,8 +126,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2502344, y: 1.22, z: 0.7388119}
-  m_Center: {x: 0.02730769, y: 0, z: -0.02486132}
+  m_Size: {x: 3.0037513, y: 1.22, z: 1.5106437}
+  m_Center: {x: -0.0181886, y: 0, z: -0.41077888}
 --- !u!1001 &6951508980243522241
 PrefabInstance:
   m_ObjectHideFlags: 0

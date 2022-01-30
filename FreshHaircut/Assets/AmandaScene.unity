@@ -8673,6 +8673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anton
       objectReference: {fileID: 0}
+    - target: {fileID: 3892270257632523067, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
       propertyPath: m_Radius
       value: 0.66

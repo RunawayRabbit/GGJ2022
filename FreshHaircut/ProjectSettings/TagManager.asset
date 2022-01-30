@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bed
   - DarkArea
+  - LightArea
   layers:
   - Default
   - TransparentFX

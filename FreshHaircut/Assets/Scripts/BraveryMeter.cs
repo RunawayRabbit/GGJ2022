@@ -18,6 +18,7 @@ public class BraveryMeter : MonoBehaviour
     private PlayerController _controller;
     private MusicManager _musicManager;
     private PlayerSFXManager _sfxManager;
+    private Animator _animationController;
 
     public float GetCurrentBravery() => _currentBravery;
 
@@ -28,6 +29,7 @@ public class BraveryMeter : MonoBehaviour
         _sfxManager    = GetComponent<PlayerSFXManager>();
         _agent         = GetComponent<NavMeshAgent>();
         _agent.enabled = false;
+        _animationController = GetComponent<Animator>();
 
         _isFrightened = false;
         _bedPosition = GameObject.FindWithTag("Bed").transform.position;
@@ -42,6 +44,7 @@ public class BraveryMeter : MonoBehaviour
     private void Update()
     {
         _currentBravery = Mathf.Clamp(_currentBravery - frightValue * Time.deltaTime, 0, maxBravery);
+        _animationController.SetFloat("bravery", _currentBravery);
 
         if (!_isFrightened && _currentBravery < braveryQuota)
         {
@@ -52,6 +55,7 @@ public class BraveryMeter : MonoBehaviour
         if (!_isRunningToBed && _currentBravery <= 0)
         {
             _isRunningToBed = true;
+            _animationController.SetBool("outOfBravery", true);
             _agent.enabled = true;
             _agent.SetDestination(_bedPosition);
             _controller.enabled = false;
@@ -69,6 +73,7 @@ public class BraveryMeter : MonoBehaviour
 
             ResetBravery();
             ResetFrightValue();
+            _animationController.SetBool("outOfBravery", false);
             _agent.enabled = false;
             _controller.enabled = true;
             _isRunningToBed = false;
@@ -77,6 +82,10 @@ public class BraveryMeter : MonoBehaviour
         else if (other.gameObject.CompareTag("DarkArea"))
         {
             ModifyFrightValue(1f);
+        }
+        else if (other.gameObject.CompareTag("LightArea"))
+        {
+            ResetBravery();
         }
     }
 

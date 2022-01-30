@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
 	public float movementSpeed = 20f;
@@ -70,7 +68,7 @@ public class PlayerController : MonoBehaviour
 			isMoving = true;
 			_sfxManager.Walk(isMoving);
 		}
-		
+
 		else if (isMoving && deltaMove == Vector3.zero)
 		{
 			isMoving = false;

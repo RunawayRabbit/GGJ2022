@@ -111,7 +111,7 @@ public class BraveryMeter : MonoBehaviour
 
     private void ModifyFrightValue(float newValue)
     {
-        frightValue += newValue;
+        frightValue = newValue;
     }
 
     private void ResetFrightValue()

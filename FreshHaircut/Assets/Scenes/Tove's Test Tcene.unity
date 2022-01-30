@@ -815,7 +815,6 @@ MonoBehaviour:
   baseFrightValue: 0
   frightValue: 0
   braveryQuota: 5
-  _camera: {fileID: 0}
   _currentBravery: 0
 --- !u!114 &1095090917
 MonoBehaviour:
@@ -1114,6 +1113,7 @@ MonoBehaviour:
   _sfxSource: {fileID: 1095090923}
   _scSfxSource: {fileID: 1095090922}
   _exhale: {fileID: 8300000, guid: e44d1f85c9d37234ea7ad8137669ba7e, type: 3}
+  _footstep: {fileID: 8300000, guid: 448f01edb825ebc48b0ab662872473da, type: 3}
 --- !u!1 &1343270921
 GameObject:
   m_ObjectHideFlags: 0

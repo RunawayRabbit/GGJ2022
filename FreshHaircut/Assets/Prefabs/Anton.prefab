@@ -334,7 +334,7 @@ MonoBehaviour:
   _sfxSource: {fileID: 9205932984612596919}
   _scSfxSource: {fileID: 6782469771976764167}
   _exhale: {fileID: 8300000, guid: e44d1f85c9d37234ea7ad8137669ba7e, type: 3}
-  _footstep: {fileID: 0}
+  _footstep: {fileID: 8300000, guid: 448f01edb825ebc48b0ab662872473da, type: 3}
 --- !u!114 &2259319982384297925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db61c5ee8c4324a92965dcc11d0ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBravery: 2
+  maxBravery: 4
   baseFrightValue: 0
   frightValue: 0
   braveryQuota: 5

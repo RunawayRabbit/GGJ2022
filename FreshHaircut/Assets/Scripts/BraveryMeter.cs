@@ -44,7 +44,7 @@ public class BraveryMeter : MonoBehaviour
     private void Update()
     {
         _currentBravery = Mathf.Clamp(_currentBravery - frightValue * Time.deltaTime, 0, maxBravery);
-        _animationController.SetFloat("bravery", _currentBravery);
+        _animationController.SetFloat("bravery", _currentBravery/maxBravery);
 
         if (!_isFrightened && _currentBravery < braveryQuota)
         {

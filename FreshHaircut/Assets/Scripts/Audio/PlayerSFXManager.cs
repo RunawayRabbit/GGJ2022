@@ -8,6 +8,7 @@ public class PlayerSFXManager : MonoBehaviour
     [SerializeField] private AudioSource _scSfxSource;
     [SerializeField] private AudioClip _exhale;
     [SerializeField] private AudioClip _footstep;
+    [SerializeField] float _footStepDelay;
 
     public void Exhale()
     {
@@ -35,7 +36,7 @@ public class PlayerSFXManager : MonoBehaviour
             _sfxSource.pitch = Random.Range(0.97f, 1.02f);
             _sfxSource.volume = Random.Range(0.2f, 0.4f);
             _sfxSource.Play();
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(_footStepDelay);
         }
     }
 }

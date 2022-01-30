@@ -254,12 +254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33a479c775efa841abb380b6f674c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicMixerGroup: {fileID: 0}
+  musicMixerGroup: {fileID: -5041665677978751531, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}
   _fearBass: {fileID: 8300000, guid: 9b34e3dcc4faae64aad3020a83e0cfb9, type: 3}
   _mainBass: {fileID: 8300000, guid: fe58a9dcc4ff9744dae65acc6edfaf12, type: 3}
   _exploringLoop: {fileID: 8300000, guid: 9fcae9162dd34b545b753ec9bd07b632, type: 3}
   _fearLoop: {fileID: 8300000, guid: 0a8b8c25b3685a6409cb7f629ca95789, type: 3}
   _mainLoop: {fileID: 8300000, guid: 57d36244b8a76494889a6f2e0286baf3, type: 3}
+  fadeDuration: 3
 --- !u!1 &6410880356137809285
 GameObject:
   m_ObjectHideFlags: 0

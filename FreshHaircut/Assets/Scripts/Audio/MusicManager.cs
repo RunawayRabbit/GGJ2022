@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public enum musicStates
 {
@@ -20,110 +21,142 @@ public class MusicManager : MonoBehaviour
 	[Space(10)]
 	[SerializeField] private AudioClip _fearLoop;
 	[SerializeField] private AudioClip _mainLoop;
+	[Space( 10 )]
+	[SerializeField] private float fadeDuration = 3.0f;
 
-	private AudioSource _mainSource;
 	private AudioSource _bassSource;
 	private AudioSource _loopSource;
+	private AudioSource _bassFaderSource;
+	private AudioSource _loopFaderSource;
 
 	private void Awake()
 	{
-		_mainSource = gameObject.AddComponent<AudioSource>();
-		_bassSource = gameObject.AddComponent<AudioSource>();
-		_loopSource = gameObject.AddComponent<AudioSource>();
+		_bassSource      = gameObject.AddComponent<AudioSource>();
+		_loopSource      = gameObject.AddComponent<AudioSource>();
+		_bassFaderSource = gameObject.AddComponent<AudioSource>();
+		_loopFaderSource = gameObject.AddComponent<AudioSource>();
+
+		_bassSource.loop      = true;
+		_loopSource.loop      = true;
+		_bassFaderSource.loop = true;
+		_loopFaderSource.loop = true;
+
+		_bassSource.outputAudioMixerGroup      = musicMixerGroup;
+		_loopSource.outputAudioMixerGroup      = musicMixerGroup;
+		_bassFaderSource.outputAudioMixerGroup = musicMixerGroup;
+		_loopFaderSource.outputAudioMixerGroup = musicMixerGroup;
+
+		_bassSource.clip = _mainBass;
+		_loopSource.clip = _mainLoop;
 	}
 
 	private void Start()
 	{
-		_bassSource.clip = _mainBass;
-		_loopSource.clip = _mainLoop;
-
-		_mainSource.outputAudioMixerGroup = musicMixerGroup;
-		_bassSource.outputAudioMixerGroup = musicMixerGroup;
-		_loopSource.outputAudioMixerGroup = musicMixerGroup;
+		PlayStem(musicStates.main);
+		_bassSource.Play();
+		_loopSource.Play();
 	}
+
+	#if UNITY_EDITOR
+	private void Update()
+	{
+		if(Keyboard.current.numpad1Key.wasPressedThisFrame) PlayStem(musicStates.main);
+		if(Keyboard.current.numpad2Key.wasPressedThisFrame) PlayStem(musicStates.exploring);
+		if(Keyboard.current.numpad3Key.wasPressedThisFrame) PlayStem(musicStates.frightened);
+	}
+	#endif
 
 	public void PlayStem( musicStates state )
 	{
-		if( state == musicStates.exploring ) { PlayExploreMusic(); }
+		switch( state )
+		{
+			case musicStates.main:
+				PlayMainMusic();
+				break;
 
-		else if( state == musicStates.frightened ) { PlayFearMusic(); }
+			case musicStates.exploring:
+				PlayExploreMusic();
+				break;
 
-		else if( state == musicStates.main ) { PlayMainMusic(); }
+			case musicStates.frightened:
+				PlayFearMusic();
+				break;
+
+			default:
+				throw new ArgumentOutOfRangeException( nameof(state), state, null );
+		}
 	}
 
 	private IEnumerator CrossFadeBass( float duration, AudioClip newClip )
 	{
-		// Create a new AudioSource for the new track
-		var newSource = _bassSource = gameObject.AddComponent<AudioSource>();
-		newSource.outputAudioMixerGroup = musicMixerGroup;
+		// Set up the fader
+		_bassFaderSource.clip   = newClip;
+		_bassFaderSource.time   = _bassSource.time;
+		_bassFaderSource.volume = 0.0f;
 
-		newSource.clip   = newClip;
-		newSource.time   = _bassSource.time;
-		newSource.volume = 0.0f;
-		newSource.Play();
+		_bassFaderSource.Play();
 
 		// Do the crossfade
 		StartCoroutine( FadeMusic( _bassSource, duration, 0f ) );
-		yield return StartCoroutine( FadeMusic( newSource, duration, 1f ) );
+		yield return StartCoroutine( FadeMusic( _bassFaderSource, duration, 1f ) );
 
 		// flip the pointers
-		Destroy( _bassSource );
-		_bassSource = newSource;
+		(_bassFaderSource, _bassSource) = (_bassSource, _bassFaderSource);
 	}
 
 	private IEnumerator CrossFadeLoop( float duration, AudioClip newClip )
 	{
-		// Create a new AudioSource for the new track
-		var newSource = _loopSource = gameObject.AddComponent<AudioSource>();
-		newSource.outputAudioMixerGroup = musicMixerGroup;
+		// Set up the fader
+		_loopFaderSource.clip   = newClip;
+		_loopFaderSource.time   = _loopSource.time;
+		_loopFaderSource.volume = 0.0f;
 
-		newSource.clip   = newClip;
-		newSource.time   = _loopSource.time;
-		newSource.volume = 0.0f;
-		newSource.Play();
+		_loopFaderSource.Play();
 
 		// Do the crossfade
 		StartCoroutine( FadeMusic( _loopSource, duration, 0f ) );
-		yield return StartCoroutine( FadeMusic( newSource, duration, 1f ) );
+		yield return StartCoroutine( FadeMusic( _loopFaderSource, duration, 1f ) );
 
 		// flip the pointers
-		Destroy( _loopSource );
-		_loopSource = newSource;
+		(_loopFaderSource, _loopSource) = (_loopSource, _loopFaderSource);
 	}
 
 	private void PlayMainMusic()
 	{
+		this.StopAllCoroutines();
 		if( _bassSource.clip != _mainBass )
 		{
-			CrossFadeBass( 0.5f, _mainBass );
+			StartCoroutine( CrossFadeBass( fadeDuration, _mainBass ) );
 		}
 		if( _loopSource.clip != _mainLoop )
 		{
-			CrossFadeBass( 0.5f, _mainLoop );
+			StartCoroutine(CrossFadeLoop( fadeDuration, _mainLoop ));
 		}
 	}
 
 	private void PlayExploreMusic()
 	{
+		this.StopAllCoroutines();
 		if( _bassSource.clip != _mainBass )
 		{
-			CrossFadeBass( 0.5f, _mainBass );
+			StartCoroutine(CrossFadeBass( fadeDuration, _mainBass ));
 		}
 		if( _loopSource.clip != _exploringLoop )
 		{
-			CrossFadeBass( 0.5f, _exploringLoop );
+			StartCoroutine(CrossFadeLoop( fadeDuration, _exploringLoop ));
 		}
 	}
 
 	private void PlayFearMusic()
 	{
-		if( _bassSource.clip != _mainBass )
+		this.StopAllCoroutines();
+		if( _bassSource.clip != _fearBass )
 		{
-			CrossFadeBass( 0.5f, _fearBass );
+			StartCoroutine(CrossFadeBass( fadeDuration, _fearBass ));
 		}
-		if( _loopSource.clip != _mainLoop )
+		if( _loopSource.clip != _fearLoop )
 		{
-			CrossFadeBass( 0.5f, _fearLoop );
+			StartCoroutine(CrossFadeLoop( fadeDuration, _fearLoop ));
 		}
 	}
 
@@ -141,7 +174,5 @@ public class MusicManager : MonoBehaviour
 
 			yield return null;
 		}
-
-		yield break;
 	}
 }

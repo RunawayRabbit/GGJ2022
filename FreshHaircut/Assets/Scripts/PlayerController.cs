@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -70,7 +69,7 @@ public class PlayerController : MonoBehaviour
 			isMoving = true;
 			_sfxManager.Walk(isMoving);
 		}
-		
+
 		else if (isMoving && deltaMove == Vector3.zero)
 		{
 			isMoving = false;

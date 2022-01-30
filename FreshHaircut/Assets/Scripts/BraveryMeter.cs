@@ -63,6 +63,32 @@ public class BraveryMeter : MonoBehaviour
         }
     }
 
+    private void AddFrightValueFromGameObject( GameObject go )
+    {
+        if( go.TryGetComponent( out DarkArea darkArea ) )
+        {
+            addValue += darkArea.FrightAddValue;
+            ModifyFrightValue(addValue);
+        }
+        else
+        {
+            Debug.LogWarning("Game object \"" + go.name + "\" is on the DarkArea layer, but has no DarkArea component!");
+        }
+    }
+    
+    private void RemoveFrightValueFromGameObject( GameObject go )
+    {
+        if( go.TryGetComponent( out DarkArea darkArea ) )
+        {
+            addValue -= darkArea.FrightAddValue;
+            ModifyFrightValue(addValue);
+        }
+        else
+        {
+            Debug.LogWarning("Game object \"" + go.name + "\" is on the DarkArea layer, but has no DarkArea component!");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bed"))
@@ -82,8 +108,7 @@ public class BraveryMeter : MonoBehaviour
 
         else if (other.gameObject.CompareTag("DarkArea"))
         {
-            addValue += other.GetComponent<DarkArea>().FrightAddValue;
-            ModifyFrightValue(addValue);
+            AddFrightValueFromGameObject( other.gameObject );
         }
         else if (other.gameObject.CompareTag("LightArea"))
         {
@@ -95,8 +120,7 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DarkArea"))
         {
-            addValue -= other.GetComponent<DarkArea>().FrightAddValue;
-            ModifyFrightValue(addValue);
+            RemoveFrightValueFromGameObject( other.gameObject );
         }
 
         else if (other.gameObject.CompareTag("Bed"))

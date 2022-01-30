@@ -82,7 +82,7 @@ public class BraveryMeter : MonoBehaviour
 
         else if (other.gameObject.CompareTag("DarkArea"))
         {
-            addValue = other.GetComponent<DarkArea>().FrightAddValue;
+            addValue += other.GetComponent<DarkArea>().FrightAddValue;
             ModifyFrightValue(addValue);
         }
         else if (other.gameObject.CompareTag("LightArea"))
@@ -95,7 +95,8 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DarkArea"))
         {
-            ModifyFrightValue(-addValue);
+            addValue -= other.GetComponent<DarkArea>().FrightAddValue;
+            ModifyFrightValue(addValue);
         }
 
         else if (other.gameObject.CompareTag("Bed"))

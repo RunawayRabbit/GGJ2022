@@ -29,6 +29,7 @@ public class MusicManager : MonoBehaviour
 	private AudioSource _bassFaderSource;
 	private AudioSource _loopFaderSource;
 
+	private musicStates _currentState;
 	private void Awake()
 	{
 		_bassSource      = gameObject.AddComponent<AudioSource>();
@@ -48,6 +49,7 @@ public class MusicManager : MonoBehaviour
 
 		_bassSource.clip = _mainBass;
 		_loopSource.clip = _mainLoop;
+		_currentState    = musicStates.main;
 	}
 
 	private void Start()
@@ -68,6 +70,7 @@ public class MusicManager : MonoBehaviour
 
 	public void PlayStem( musicStates state )
 	{
+		if( state == _currentState ) return;
 		switch( state )
 		{
 			case musicStates.main:
@@ -123,6 +126,7 @@ public class MusicManager : MonoBehaviour
 
 	private void PlayMainMusic()
 	{
+		_currentState = musicStates.main;
 		this.StopAllCoroutines();
 		if( _bassSource.clip != _mainBass )
 		{
@@ -136,6 +140,7 @@ public class MusicManager : MonoBehaviour
 
 	private void PlayExploreMusic()
 	{
+		_currentState = musicStates.exploring;
 		this.StopAllCoroutines();
 		if( _bassSource.clip != _mainBass )
 		{
@@ -149,6 +154,7 @@ public class MusicManager : MonoBehaviour
 
 	private void PlayFearMusic()
 	{
+		_currentState = musicStates.frightened;
 		this.StopAllCoroutines();
 		if( _bassSource.clip != _fearBass )
 		{

@@ -53,6 +53,12 @@ public class BraveryMeter : MonoBehaviour
             _musicManager.PlayStem(musicStates.frightened);
         }
 
+        if (!_isFrightened && _currentBravery < maxBravery - 1.0f)
+        {
+            _musicManager.PlayStem(musicStates.exploring);
+        }
+
+
         if (!_isRunningToBed && _currentBravery <= 0)
         {
             _isRunningToBed = true;
@@ -75,7 +81,7 @@ public class BraveryMeter : MonoBehaviour
             Debug.LogWarning("Game object \"" + go.name + "\" is on the DarkArea layer, but has no DarkArea component!");
         }
     }
-    
+
     private void RemoveFrightValueFromGameObject( GameObject go )
     {
         if( go.TryGetComponent( out DarkArea darkArea ) )

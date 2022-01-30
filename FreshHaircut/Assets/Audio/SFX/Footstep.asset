@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591454c05f1dea54c89e8f8e418bde28, type: 3}
   m_Name: Footstep
   m_EditorClassIdentifier: 
-  clips: []
+  clips:
+  - {fileID: 8300000, guid: 448f01edb825ebc48b0ab662872473da, type: 3}
   baseVolumeDB: 0
   spacialBlend: 1
   pitchShift: 0
-  randomVolume: 0
-  randomPitch: 0
+  randomVolume: -1.82
+  randomPitch: 0.9
   mixerGroup: {fileID: -380396474752962498, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}

@@ -8681,6 +8681,18 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.66
       objectReference: {fileID: 0}
+    - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
+      propertyPath: m_Acceleration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4195388996436268581, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6782469771976764167, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
     - {fileID: 9205932984612596919, guid: 974a329e5ee2880449f7d118ba363963, type: 3}

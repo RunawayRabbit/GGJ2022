@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5259791062386006669}
   - component: {fileID: 5259791062386006706}
   - component: {fileID: 1903324045508057428}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: DarkArea
   m_TagString: DarkArea
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a70e55ed46fd0574a8906c73d7e4bae1, type: 2}
+  - {fileID: 2100000, guid: cac9f505b3dc97d4498639b3c81a6253, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

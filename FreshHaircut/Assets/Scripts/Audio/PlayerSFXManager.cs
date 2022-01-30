@@ -1,31 +1,44 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(AudioSource))]
 public class PlayerSFXManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource _sfxSource;
-    [SerializeField] private AudioSource _scSfxSource;
-    [SerializeField] private AudioClip _exhale;
-    [SerializeField] private AudioClip _footstep;
-    [SerializeField] float _footStepDelay;
+    [SerializeField] private AudioData exhaleSound;
+    [SerializeField] private AudioData footstepSound;
+
+    [SerializeField, Range(0.2f, 1.5f)] public float footstepFrequency = 0.2f;
+
+    private Coroutine _walkingCoroutine;
 
     public void Exhale()
     {
-        _scSfxSource.clip = _exhale;
-        _scSfxSource.Play();
+        SFXManager.PlaySoundAt(exhaleSound, transform.position);
+    }
+
+    private void Update()
+    {
+        if( Keyboard.current.nKey.wasPressedThisFrame )
+        {
+            Walk(true );
+        }
+
+        if( Keyboard.current.mKey.wasPressedThisFrame )
+        {
+            Walk(!true );
+        }
     }
 
     public void Walk(bool isWalking)
     {
-        if (isWalking == true)
+        if (isWalking)
         {
-            _sfxSource.clip = _footstep;
-            StartCoroutine(Walking());
+            _walkingCoroutine = StartCoroutine(Walking());
         }
         else
         {
-            StopAllCoroutines();
+            if(_walkingCoroutine != null) StopCoroutine(_walkingCoroutine);
+            _walkingCoroutine = null;
         }
     }
 
@@ -33,10 +46,8 @@ public class PlayerSFXManager : MonoBehaviour
     {
         while (true)
         {
-            _sfxSource.pitch = Random.Range(0.97f, 1.02f);
-            _sfxSource.volume = Random.Range(0.2f, 0.4f);
-            _sfxSource.Play();
-            yield return new WaitForSeconds(_footStepDelay);
+            SFXManager.PlaySoundAt(footstepSound, transform.position);
+            yield return new WaitForSeconds(footstepFrequency);
         }
     }
 }

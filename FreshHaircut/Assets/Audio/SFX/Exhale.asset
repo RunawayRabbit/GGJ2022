@@ -15,7 +15,7 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: e44d1f85c9d37234ea7ad8137669ba7e, type: 3}
   - {fileID: 8300000, guid: a5c64c44a7ed48345b43497c63b828cd, type: 3}
-  baseVolumeDB: 0
+  baseVolumeDB: 10.9
   spacialBlend: 1
   pitchShift: 0
   randomVolume: 0

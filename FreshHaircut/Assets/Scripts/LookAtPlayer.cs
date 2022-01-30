@@ -18,7 +18,7 @@ public class LookAtPlayer : MonoBehaviour
 	private void Update()
 	{
 		var targetLocation = _player.transform.position;
-		if(Vector3.Dot( _startDir, (targetLocation - transform.position ).normalized ) > 0.65f)
+		if(Vector3.Dot( _startDir, (targetLocation - transform.position ).normalized ) > 0.35f)
 			transform.LookAt(targetLocation + Vector3.down, Vector3.up);
 	}
 }

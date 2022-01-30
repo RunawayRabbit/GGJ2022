@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a5c64c44a7ed48345b43497c63b828cd, type: 3}
   baseVolumeDB: 20
   spacialBlend: 1
-  pitchShift: 3.3
+  pitchShift: 2.2
   randomVolume: 0
   randomPitch: 0.62
   mixerGroup: {fileID: -8195690210267432824, guid: e48b5b84372de00448ad0d7d491ac694, type: 2}

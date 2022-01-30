@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3896935616967187346}
   - component: {fileID: 7588479366455766605}
   - component: {fileID: 3309940338499740183}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4c39e03724be0764493e5d20e172593d, type: 3}
-  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 8307454147954442045}
   - component: {fileID: 8307454147954442046}
   - component: {fileID: 8307454147954442047}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Happy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

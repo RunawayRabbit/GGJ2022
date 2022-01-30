@@ -17,7 +17,6 @@ public class SFXManager : MonoBehaviour
 										   float     volume = 1.0f,
 										   float     delay  = 0.0f )
 	{
-		Debug.Log( "Footstep" );
 		AudioSource audioSource;
 
 		lock(_instance)

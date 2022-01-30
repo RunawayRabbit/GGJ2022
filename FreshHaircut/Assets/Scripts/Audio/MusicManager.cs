@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -12,10 +13,11 @@ public enum musicStates
 public class MusicManager : MonoBehaviour
 {
 	[SerializeField] private AudioMixerGroup musicMixerGroup;
-
+	[Space(10)]
 	[SerializeField] private AudioClip _fearBass;
 	[SerializeField] private AudioClip _mainBass;
 	[SerializeField] private AudioClip _exploringLoop;
+	[Space(10)]
 	[SerializeField] private AudioClip _fearLoop;
 	[SerializeField] private AudioClip _mainLoop;
 
@@ -62,40 +64,67 @@ public class MusicManager : MonoBehaviour
 
 		// Do the crossfade
 		StartCoroutine( FadeMusic( _bassSource, duration, 0f ) );
+		yield return StartCoroutine( FadeMusic( newSource, duration, 1f ) );
+
+		// flip the pointers
+		Destroy( _bassSource );
+		_bassSource = newSource;
+	}
+
+	private IEnumerator CrossFadeLoop( float duration, AudioClip newClip )
+	{
+		// Create a new AudioSource for the new track
+		var newSource = _loopSource = gameObject.AddComponent<AudioSource>();
+		newSource.outputAudioMixerGroup = musicMixerGroup;
+
+		newSource.clip   = newClip;
+		newSource.time   = _loopSource.time;
+		newSource.volume = 0.0f;
+		newSource.Play();
+
+		// Do the crossfade
 		StartCoroutine( FadeMusic( _loopSource, duration, 0f ) );
+		yield return StartCoroutine( FadeMusic( newSource, duration, 1f ) );
+
+		// flip the pointers
+		Destroy( _loopSource );
+		_loopSource = newSource;
 	}
 
 	private void PlayMainMusic()
 	{
-		StartCoroutine( FadeMusic( _loopSource, 0.5f, 0f ) );
-		StartCoroutine( FadeMusic( _bassSource, 0.5f, 0f ) );
-		_loopSource.time = _mainSource.time;
-		_loopSource.clip = _mainLoop;
-		_bassSource.time = _mainSource.time;
-		_bassSource.clip = _mainBass;
-		StartCoroutine( FadeMusic( _bassSource, 0.5f, 1f ) );
-		StartCoroutine( FadeMusic( _loopSource, 0.5f, 1f ) );
+		if( _bassSource.clip != _mainBass )
+		{
+			CrossFadeBass( 0.5f, _mainBass );
+		}
+		if( _loopSource.clip != _mainLoop )
+		{
+			CrossFadeBass( 0.5f, _mainLoop );
+		}
 	}
 
 	private void PlayExploreMusic()
 	{
-		StartCoroutine( FadeMusic( _loopSource, 0.5f, 0f ) );
-		_loopSource.time = _mainSource.time;
-		_loopSource.clip = _exploringLoop;
-		_loopSource.Play();
-		StartCoroutine( FadeMusic( _loopSource, 0.5f, 1f ) );
+		if( _bassSource.clip != _mainBass )
+		{
+			CrossFadeBass( 0.5f, _mainBass );
+		}
+		if( _loopSource.clip != _exploringLoop )
+		{
+			CrossFadeBass( 0.5f, _exploringLoop );
+		}
 	}
 
 	private void PlayFearMusic()
 	{
-		StartCoroutine( FadeMusic( _loopSource, 0.5f, 0f ) );
-		StartCoroutine( FadeMusic( _bassSource, 0.5f, 0f ) );
-		_bassSource.clip = _fearBass;
-		_bassSource.time = _mainSource.time;
-		_loopSource.clip = _fearLoop;
-		_loopSource.Play();
-		StartCoroutine( FadeMusic( _loopSource, 0.5f, 1f ) );
-		StartCoroutine( FadeMusic( _bassSource, 0.5f, 1f ) );
+		if( _bassSource.clip != _mainBass )
+		{
+			CrossFadeBass( 0.5f, _fearBass );
+		}
+		if( _loopSource.clip != _mainLoop )
+		{
+			CrossFadeBass( 0.5f, _fearLoop );
+		}
 	}
 
 	private IEnumerator FadeMusic( AudioSource source, float duration, float targetVolume )

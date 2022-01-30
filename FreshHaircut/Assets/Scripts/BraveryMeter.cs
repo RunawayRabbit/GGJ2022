@@ -75,6 +75,19 @@ public class BraveryMeter : MonoBehaviour
             Debug.LogWarning("Game object \"" + go.name + "\" is on the DarkArea layer, but has no DarkArea component!");
         }
     }
+    
+    private void RemoveFrightValueFromGameObject( GameObject go )
+    {
+        if( go.TryGetComponent( out DarkArea darkArea ) )
+        {
+            addValue -= darkArea.FrightAddValue;
+            ModifyFrightValue(addValue);
+        }
+        else
+        {
+            Debug.LogWarning("Game object \"" + go.name + "\" is on the DarkArea layer, but has no DarkArea component!");
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -107,7 +120,7 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("DarkArea"))
         {
-            AddFrightValueFromGameObject( other.gameObject );
+            RemoveFrightValueFromGameObject( other.gameObject );
         }
 
         else if (other.gameObject.CompareTag("Bed"))

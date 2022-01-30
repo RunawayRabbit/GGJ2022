@@ -93,7 +93,7 @@ public class BraveryMeter : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bed"))
         {
-            if (_isFrightened)
+            if (_isRunningToBed)
             {
                 _sfxManager.Exhale();
             }

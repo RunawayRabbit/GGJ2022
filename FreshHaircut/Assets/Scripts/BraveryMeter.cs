@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -32,7 +33,19 @@ public class BraveryMeter : MonoBehaviour
         _animationController = GetComponent<Animator>();
 
         _isFrightened = false;
-        _bedPosition = GameObject.FindWithTag("Bed").transform.position;
+        _bedPosition  = GameObject.FindWithTag( "Bed" ).transform.position;
+
+        if( NavMesh.SamplePosition( _bedPosition,
+                                    out NavMeshHit hit,
+                                    Single.PositiveInfinity,
+                                    NavMesh.AllAreas ) )
+        {
+            _bedPosition = hit.position;
+        }
+        else
+        {
+            Debug.Assert(false, "Bed isn't close to navmesh, or bed doesn't exist or something idk.");
+        }
     }
 
     private void Start()

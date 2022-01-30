@@ -6381,10 +6381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightswitch
       objectReference: {fileID: 0}
-    - target: {fileID: 6902896816545993267, guid: fcf69eb4859b30542899b7702e9573e5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 7172739764033125213, guid: fcf69eb4859b30542899b7702e9573e5, type: 3}
+      propertyPath: _directionalLight
+      value: 
+      objectReference: {fileID: 775728997}
     - target: {fileID: 7172739764033125213, guid: fcf69eb4859b30542899b7702e9573e5, type: 3}
       propertyPath: _objectOfAbsoluteFuckingLightness
       value: 
@@ -8765,6 +8765,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6782469771976764167, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
     - {fileID: 9205932984612596919, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
+    - {fileID: 2177633144751017917, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 974a329e5ee2880449f7d118ba363963, type: 3}
 --- !u!1 &1729769836 stripped
 GameObject:
